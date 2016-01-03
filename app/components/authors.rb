@@ -1,6 +1,6 @@
-class Authors < Netzke::Basepack::Grid
+class Authors < Netzke::Grid::Base
   def configure(c)
     super
-    c.model = "Author"
+    c.model = Author
   end
 end

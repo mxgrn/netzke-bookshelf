@@ -1,20 +1,20 @@
-class Books < Netzke::Basepack::Grid
+class Books < Netzke::Grid::Base
   def configure(c)
+    super
+
+    c.model = Book
+
+    # which columns to show
     c.columns = [
       # you may configure columns inline like this:
       { name: :author__name, text: "Author", width: 200 },
-
       :title,
       :exemplars,
       :completed
     ]
 
-    c.model = "Book"
-
     # which buttons to show in the bottom toolbar
-    c.bbar = [:add, :edit, :del, '->', :apply]
-
-    super
+    c.bbar = [:add, :edit, :delete, '->', :apply]
   end
 
   # you may also use DSL to configure columns individually
